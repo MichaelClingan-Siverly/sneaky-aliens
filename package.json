@@ -1,12 +1,25 @@
 {
-  "name": "socket-chat-example",
+  "name": "sneaky-aliens",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "turn based hidden movement game",
+  "main": "index.js",
   "dependencies": {
-    "express": "^4.15.2",
-    "socket.io": "^1.7.3"
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
-  }
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelClingan-Siverly/sneaky-aliens.git"
+  },
+  "author": "Michael Clingan-Siverly",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/MichaelClingan-Siverly/sneaky-aliens/issues"
+  },
+  "homepage": "https://github.com/MichaelClingan-Siverly/sneaky-aliens#readme"
 }
