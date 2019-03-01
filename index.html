@@ -1,39 +1,65 @@
 <!doctype html>
-<html>
+<html lang="eng">
   <head>
-    <title>Sneaky Alieny Lobby</title>
-	<h1 align="center">Sneaky Aliens</h1>
+    <title>Sneaky Aliens</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
+      body { font: 13px Helvetica, Arial; overflow-y: hidden; overflow-x:hidden;}
+      form { background: #000; padding: 1px; width: 100%;}
+      form input { border: 0; width: 90%; margin-right: .5%; padding: 8px}
+      form button { width: 8%; background: rgb(130, 224, 255); border: none; padding: 8px; position: fixed; right:0;}
+      #messages { list-style-type: none; border:1px solid #ccc; margin: 0; padding: 0; height:250px; overflow-y: auto;} 
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
-      #messages { margin-bottom: 40px }
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <center><h1 style="color:gray;">Sneaky Aliens</h1></center>
+
+    <div class="row">
+      <div class="col-sm-8">
+        lkajs dkjnas dkasjhnd sdkfjnsdfk ljnhsdfkjl sdnfkjn   sefkjnsdf  skflnsdf kjsdnfsdfn sdf
+        <div class="col-sm-8">
+          asd sa d kjn kjbhasd  sasdf  dsf sdf sdf sdf jkn kjbn
+        </div>
+        <div class="col-sm-8">
+          asdf asfd nsdf  sef sfd sdf kin lnm sdf 
+        </div>
+        <div class="col-sm-8">
+            asdf asfd nsdf  sef sfd sdf kin lnm sdf 
+          </div>
+      </div>
+      <div class="col-sm-4">
+        <ul id="messages"></ul>
+        <form action="">
+          <input id="m" autocomplete="off"/>
+          <button>Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       $(function () {
         var socket = io();
         $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
+          //TODO there needs to be a login page first. Once logged in, MyName should be an actual username
+          socket.emit('chat message', "MyName: "+$('#m').val());
           $('#m').val('');
           return false;
         });
         socket.on('chat message', function(msg){
-          $('#messages').append($('<li>').text(msg));
-          window.scrollTo(0, document.body.scrollHeight);
+          var shortMsg = msg.substr(msg.indexOf(": ")+2);
+          if($.trim(shortMsg).length !== 0){
+            $('#messages').append($('<li>').text(msg));
+          }
+          $("#messages").scrollTop($("#messages")[0].scrollHeight);
         });
+        socket.on()
       });
     </script>
   </body>
