@@ -1,13 +1,11 @@
-# chat-example
+# Sneaky Aliens
 
-This is the source code for a very simple chat example used for
-the [Getting Started](http://socket.io/get-started/chat/) guide
-of the Socket.IO website.
+My first JS project! This is a hidden movement game where some players are trying to escape a derelict spaceship (or whatever you prefer to imagine, it's abstracted), and other players try to hunt them down and kill them.
 
-Please refer to it to learn how to run this application.
+It was built from a fork Socket.io's chat-example in a very general sense.
+That project can be found here:
+https://github.com/socketio/socket.io
 
-You can also spin up a free Heroku dyno to test it out:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/socketio/chat-example)
-
-Besides, the application is deployed on [Now](https://zeit.co/now): https://socketio-chat-example.now.sh/
+And if you want, consider buying the print&play from the original creators:
+http://www.eftaios.com/
